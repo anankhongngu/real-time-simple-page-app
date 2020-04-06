@@ -18,4 +18,6 @@ class Reply extends Model
     public function like() {
     	return $this->hasMany(Likes::class);
     }
+
+     protected $guarded = []; //tat ca duoc gan de su dung cho replycotroller
 }

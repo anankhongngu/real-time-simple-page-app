@@ -36,7 +36,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->slug = str_slug($request->name);
         $category->save();
-        return response()->json(['Created success'=>$category],201);
+        return response(['Created success'=>$category],201);
     
     }
 

@@ -26,6 +26,7 @@ class Question extends Model
 
     public function replies() {
     	return $this->hasMany(Reply::class);
+        //tao quan he de dung function index trong ReplyController
     }
 
     public function category() {
