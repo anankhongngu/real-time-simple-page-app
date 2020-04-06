@@ -71,6 +71,6 @@ class QuestionController extends Controller
     {
         //
         $question->delete();
-        return response('Delete success', 201);
+        return response(null, 204);
     }
 }
