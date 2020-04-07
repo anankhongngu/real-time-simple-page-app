@@ -30,7 +30,15 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         //
-        Question::create($request->all());
+        // Question::create($request->all());
+        $question = new Question;
+        $question->title= $request->title;
+        $question->slug = str_slug($request->title);
+        $question->body = $request->body;
+        $question->category_id = $request->category_id;
+        $question->user_id = $request->user_id;
+        $question->save();
+
         return response('Created success', 201);
     }
 
@@ -57,7 +65,16 @@ class QuestionController extends Controller
     public function update(Request $request, Question $question)
     {
         //
-        $question->update($request->all());
+        // $question->update($request->all());
+
+        $question->update([
+            'title' => $request->title,
+            'slug' => str_slug($request->title),
+            'body' => $request->body,
+            'category_id' => $request->category_id,
+            'user_id' => $request->user_id,
+        ]);
+
         return response('Update success', 201);
     }
 
