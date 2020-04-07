@@ -1,85 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Model\Reply;
 use App\Model\Likes;
 use Illuminate\Http\Request;
 
 class LikesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+   public function likeIt(Reply $reply) {
+        $reply->like()->create([
+            // 'user_id' => auth()->id(),
+            'user_id' => '1'
+        ]);
+   }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Model\Likes  $likes
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Likes $likes)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Model\Likes  $likes
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Likes $likes)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\Likes  $likes
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Likes $likes)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Model\Likes  $likes
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Likes $likes)
-    {
-        //
-    }
+   public function unLikeIt() {
+        // $reply->like()->where(['user_id',auth()->id()])->first()->delete();
+        $reply->like()->where('user_id','1')->first()->delete();
+   }
 }

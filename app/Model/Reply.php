@@ -22,5 +22,5 @@ class Reply extends Model
     	return $this->hasMany(Likes::class);
     }
 
-     protected $guarded = []; //tat ca duoc gan de su dung cho replycotroller
+    protected $guarded = []; //tat ca duoc gan de su dung cho replycotroller
 }
