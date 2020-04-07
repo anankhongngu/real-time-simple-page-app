@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Model;
+use App\User;
+use App\Model\Question;
+use App\Model\Likes;
 
 use Illuminate\Database\Eloquent\Model;
 
