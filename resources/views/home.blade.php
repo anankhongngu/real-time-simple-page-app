@@ -8,7 +8,7 @@
 	
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	
-	<title>O-O</title>
+	<title>^_^</title>
 	
 	<!-- <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet"> -->
 	<link href="https://cdn.jsdelivr.net/npm/vuetify@1.x/dist/vuetify.min.css" rel="stylesheet">
