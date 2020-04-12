@@ -1,23 +1,35 @@
 <template>
-	<v-card color="grey lighten-4" flat height="200px" tile>
-		<v-toolbar dense>
-			<!-- <v-app-bar-nav-icon></v-app-bar-nav-icon>	 -->
-
-			<v-toolbar-title>Title</v-toolbar-title>
+	<v-card color=""  fixed flat height="auto" tile>
+		<v-toolbar dense class= "teal">
+		
+			<!-- <v-toolbar-side-icon class = "white--text"></v-toolbar-side-icon> -->
+			<v-toolbar-title class = "white--text">Title</v-toolbar-title>
 
 			<v-spacer></v-spacer>
 			
-			<v-toolbar-items class="hidden-sm-and-down">
-				<v-btn class ="bg-white">Forum</v-btn>
-				<v-btn class ="bg-white">Ask Question</v-btn>
-				<v-btn class ="bg-white">Category</v-btn>
-				<v-btn class ="bg-white">Login</v-btn>
-			</v-toolbar-items>
+			<div class ="hidden-sm-and-down">
 
+				<router-link to = "/forum">
+					<v-btn round class = "white--text"
+					color= "yellow darken-3">Forum</v-btn>
+				</router-link>	
+				
+				<v-btn round class = "white--text"
+				color = "yellow darken-3">Ask Question</v-btn>
+				
+				<v-btn round class = "white--text"
+				color = "yellow darken-3">Category</v-btn>
+
+				<router-link to = "login">
+					<v-btn round class = "white--text"
+					color = "yellow darken-3">Login</v-btn>
+				</router-link>
+
+			</div>
 
 			<v-btn icon>
-			<v-icon>mdi-magnify</v-icon>
-			</v-btn>
+		      <v-icon color = "yellow darken-3">search</v-icon>
+		    </v-btn>
 
 			
 		</v-toolbar>
@@ -29,8 +41,5 @@
 </script>
 
 <style lang = "scss" scoped>
-	.bg-white {
-		background-color: #fff;
-		box-shadow: unset;
-	}
+	
 </style>
