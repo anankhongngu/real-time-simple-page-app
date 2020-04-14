@@ -23,10 +23,10 @@ import router from './Router/router.js'
 //helpers/user
 import User from './Helpers/User'
 window.User = User;
-// console.log(User.loggedIn());
-// User.logout()
+
 // console.log(User.id())
 
+window.EventBus = new Vue();
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
