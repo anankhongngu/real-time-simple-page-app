@@ -1,19 +1,21 @@
 <template>
 	<v-form @submit.prevent = "login()">
 		<v-layout>
-			<v-flex xs12 sm6 offset-sm3>
+			<v-flex xs12 sm4 offset-sm4>
 		    	
 				<v-container>			   
-			    <v-card>
+			    <v-card class="mx-auto">
 			        <v-img
-			          src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+			          src="./img/login.jpeg"
 			          aspect-ratio="2.75"
 			        ></v-img>
 		    	
 			    
 		    	<!-- input email -->
 		    	<v-card-title>
-          		
+          		<h3 class ="flex sm12 text-center">
+		    		Welcome Back!
+		    	</h3>
 				<v-flex
 		          xs12
 		          md12
@@ -44,7 +46,7 @@
 		    	</v-card-title>
 
 
-		    	
+				
 		        <v-btn
 		        	class = "justify-center white--text"
 			    	color = "green"
@@ -58,7 +60,6 @@
 				</router-link>
 
 				
-		       	
 		    	</v-card>   	
 	       		</v-container>
 			</v-flex>

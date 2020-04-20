@@ -1,19 +1,21 @@
 <template>
 	<v-form @submit.prevent = "signup">
 		<v-layout>
-			<v-flex xs12 sm6 offset-sm3>
+			<v-flex xs12 sm4 offset-sm4>
 		    	<v-container>
 			
 				<v-card>
 			        <v-img
-			          src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+			          src="./img/login.jpeg"
 			          aspect-ratio="2.75"
 			        ></v-img>
 		    	
 
 		    	<!-- input email -->
 		    	<v-card-title>
-
+		    	<h3 class = "flex text-center sm12">
+		    		Create an Account!
+		    	</h3>
 				<v-flex
 		          xs12
 		          md12

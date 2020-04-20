@@ -1,37 +1,58 @@
 <template>
-	<v-card color=""  fixed flat height="auto" tile>
-		<v-toolbar dense class= "teal">
+	
+
+<v-card color=""  fixed flat height="auto" tile>
+		<v-toolbar dense class= "blue-grey darken-4">
 		
 			<!-- <v-toolbar-side-icon class = "white--text"></v-toolbar-side-icon> -->
-			<v-toolbar-title class = "white--text">Welcome</v-toolbar-title>
+			<router-link to="/forum">
+			<v-toolbar-title 
+			class = "white--text">
+			<strong class="blue--text"
+			style="font-size: 25px">Fun</strong>Boo
 
+			</v-toolbar-title>
+		</router-link>
 			<v-spacer></v-spacer>
 			
-			<div class ="hidden-sm-and-down">
-
+			<div class ="hidden-sm-and-down bg-btn">
+				
 				<router-link 
 				
 				v-for = "item in items"
 				:key = "item.title"
 				:to = "item.to"
 				v-if = "item.show"
-				>
-					<v-btn round class = "white--text"
-					color = "yellow darken-3">{{ item.title }}</v-btn>
-				</router-link>
+				
+				 >
+				<v-btn class = "blue-grey darken-4 
 
+				white--text" 
+				style="border: unset; box-shadow: unset">			
+					{{ item.title }}
+
+				</v-btn>
+
+				</router-link>
+				
 			</div>
 
 			<v-btn icon>
-		      <v-icon color = "yellow darken-3">search</v-icon>
+		      <v-icon class = "white--text">search</v-icon>
 		    </v-btn>
 
+		    <v-btn icon>
+		       <v-icon class="white--text">edit</v-icon>
+
+		    </v-btn>
+		 
 			
 		</v-toolbar>
 	</v-card>
-</template>
 
+</template>
 <script>
+
 	export default {
 		data() {
 			return {
@@ -43,13 +64,13 @@
 					},
 
 					{
-						title: 'Ask Question', 
+						title: 'Ask Question',
 						to: '/ask',
 						show: User.loggedIn()
 					},
 
 					{
-						title: 'Category', 
+						title: 'Category',
 						to: '/category',
 						show: User.loggedIn()
 					},
@@ -69,7 +90,7 @@
 				]
 			}
 		},
-
+		dialog: false,
 		created() {
 			EventBus.$on('logout', () => {
 				User.logout()
