@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+:root {
+    --dark-color: rgb(21, 32, 43);
+    --dark-color-2: rgb(25, 39, 52);
+    --dark-color-3: rgb(102, 102, 102);
+}
+
+.bg-dark-1 {
+	background: var(--dark-color);
+}
+.bg-dark-3 {
+	background: var(--dark-color-3);        
+}
+a {
+    text-decoration: none;
+    color: #fff; 
+}
+a:hover {
+	color: unset;
+	text-decoration: unset;
+}
+.v-btn, button {
+	text-transform: unset;
+	font-size: 16px;
+}
+button:focus {
+    outline: unset;
+}
+.text-center {
+	text-align: center;
+}
+.hidden {
+	display: none;
+}

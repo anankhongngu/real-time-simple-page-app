@@ -12,10 +12,15 @@ window.Vue = require('vue');
 // vuetify js
 import Vue from 'vue'
 import Vuetify from 'vuetify'
-// import 'vuetify/dist/vuetify.min.css'
-
 Vue.use(Vuetify)
-// 
+
+
+// SimpleMD
+import VueSimplemde from 'vue-simplemde'
+// import 'simplemde/dist/simplemde.min.css'
+Vue.component('vue-simplemde', VueSimplemde)
+
+
 
 //vue router
 import router from './Router/router.js'

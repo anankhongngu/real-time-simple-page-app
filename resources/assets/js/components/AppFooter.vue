@@ -1,6 +1,6 @@
 <template>
   <v-footer
-    dark
+    darken
     height="auto"
   >
   
@@ -9,37 +9,37 @@
       flat
       tile
     >
-    <v-card-title class="teal">
-        <strong class="subheading">Get connected with us on social networks!</strong>
 
-        <v-spacer></v-spacer>
 
-        <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-3"
-          dark
-          icon
-        >
-          <v-icon size="24px">{{ icon }}</v-icon>
-        </v-btn>
-    </v-card-title>
+		<v-card-actions class="blue-grey darken-4 justify-center">
+            
+		<!-- <strong class ="white--text">Never Give Up</strong> -->
+		<v-btn
+            v-for="icon in icons"
+            :key="icon"
+            class="mx-4 white--text"
+            icon >
+            <v-icon size="24px">{{ icon }}</v-icon>
+          </v-btn>
 
-		<v-card-actions class="grey darken-3 justify-center">
-			&copy;{{ new Date().getFullYear() }}<strong> - AnAn</strong>
-		</v-card-actions>
+        </v-card-actions>
     </v-card>
   </v-footer>
 </template>
 
 <script>
 	export default {
-    data: () => ({
-      icons: [
-        'fab fa-facebook',
-        'fab fa-google-plus',
-        'fab fa-instagram'
-      ]
+        data: () => ({
+        icons: [
+            'fab fa-facebook',
+            'fab fa-twitter',
+            'fab fa-instagram',            
+        ],
     })
   }
 </script>
+
+<style> 
+
+</style>
+
