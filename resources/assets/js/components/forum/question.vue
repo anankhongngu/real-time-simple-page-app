@@ -1,5 +1,5 @@
 <template>
-    <v-card class = "blue-grey darken-4 white--text">
+    <v-card class = "blue-grey darken-4 white--text mt-2">
         <v-card-title primary-title>
           <div>
             <h3 class="headline mb-0">

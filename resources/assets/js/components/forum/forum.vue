@@ -1,17 +1,20 @@
 <template>
 	<v-container grid-list-md >
     <v-layout row wrap >
-	      <v-flex xs12 md8 >
+	    <v-flex xs12 md9 >
 	        <question
 	        v-for = "question in questions"
 	        :key = "question.path"
 	        :data = question
 
 	        ></question>
-	      </v-flex>
-	      <v-flex xs12 md4 >
-	        Categorry
 	    </v-flex>
+	    
+	    <v-flex xs12 md3 >
+	        <app-sidebar></app-sidebar>
+	    </v-flex>
+
+
   	</v-layout>
   </v-container>
 
@@ -19,6 +22,7 @@
  
 <script>
 import question from './question'	
+import AppSidebar from './AppSidebar'	
 	export default {
 
 		data() {
@@ -26,7 +30,7 @@ import question from './question'
 				questions: {}
 			}
 		},
-		components: {question},
+		components: {question, AppSidebar},
 
 		created() {
 			axios.get('api/question')
