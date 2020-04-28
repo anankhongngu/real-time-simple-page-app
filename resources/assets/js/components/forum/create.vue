@@ -15,7 +15,7 @@
 			    	<!-- input category -->
 			    	<v-card-title>
 	          		<h3 class ="flex xs12 sm12 text-center">
-			    		Create catelogy!
+			    		Create question!
 			    	</h3>
 					<v-flex
 			          xs12
@@ -35,12 +35,13 @@
 		            attach
 		            chips
 		            label="Category"
-		            multiple
 		            item-text="name"
 		            item-value="id"
 		          	></v-select>
+		          	
 		          	<v-flex>
-		          	<vue-simplemde v-model="form.body" />
+		          	<!-- <vue-simplemde v-model="form.body" type = "text" /> -->
+		          	<markdown-editor v-model="form.body" type="text"></markdown-editor>
 		          	</v-flex>
 		          		
 		          	<!-- </markdown-editor> -->
@@ -76,20 +77,22 @@
 					category_id: null,
 					body: null,
 				},
-				categories: {},
+				categories: [],
 				errors: {}
-			}
+			} 
 		},
 
 		created() {
 			axios.get('/api/category')
-			.then(response => this.categories = response.data.data)
+			.then(res => {
+				this.categories = res.data.data //lay phan tu trong data.data xong them vo thang form categories
+			})
 		},
 
 		methods: {
 			create() {
 				axios.post('/api/question', this.form)
-				.then(response => console.log(response.data))
+				.then(response => this.$router.push(response.data.path))
 				.catch(error => this.errors = error.response.data.error)
 			}
 		}
@@ -97,5 +100,5 @@
 
 </script>
 <style>
-	
+
 </style>

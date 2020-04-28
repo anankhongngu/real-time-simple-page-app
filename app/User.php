@@ -6,6 +6,8 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Model\Question;
+use Illuminate\Support\Facades\Auth;
+
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -19,6 +21,8 @@ class User extends Authenticatable implements JWTSubject
     protected $fillable = [
         'name', 'email', 'password',
     ];
+    // protected $guarded = [];
+
 
     /**
      * The attributes that should be hidden for arrays.

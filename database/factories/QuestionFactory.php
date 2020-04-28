@@ -6,7 +6,7 @@ use App\User;
 
 $factory->define(App\Model\Question::class, function (Faker $faker) {
     
-    $title = $faker->sentence;
+    $title = $faker->sentence();
 
     return [
     	'title' => $title,

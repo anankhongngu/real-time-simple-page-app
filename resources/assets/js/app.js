@@ -17,10 +17,10 @@ Vue.use(Vuetify)
 
 // SimpleMD
 import VueSimplemde from 'vue-simplemde'
-// import 'simplemde/dist/simplemde.min.css'
-Vue.component('vue-simplemde', VueSimplemde)
+Vue.use(VueSimplemde)
+import md from 'marked'
 
-
+window.md = md;
 
 //vue router
 import router from './Router/router.js'

@@ -20,7 +20,8 @@
 </template>
 <script>
 	export default {
-		props: ['data'] //truyen qua forum cho question
+		props: ['data'],
+         //truyen qua forum cho question
 	}
 
 	

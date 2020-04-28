@@ -2,8 +2,11 @@
 namespace App\Http\Controllers;
 
 use App\Model\Question;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Resources\QuestionResource;
+use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 
 class QuestionController extends Controller
 {
@@ -38,12 +41,16 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Question $question)
     {
-        //auth()->user->question()->create($request->all());
+
         $request['slug'] = str_slug($request->title);
-        auth()->user()->question()->create($request->all());
-        return response('Created success', 201);
+
+        $question = (auth()->user()->question()->create($request-> all()));
+
+        
+        return response(new QuestionResource($question), 201);
+
     }
 
     /**
@@ -69,15 +76,15 @@ class QuestionController extends Controller
     public function update(Request $request, Question $question)
     {
         //
-        // $question->update($request->all());
+        $question->update($request->all());
 
-        $question->update([
-            'title' => $request->title,
-            'slug' => str_slug($request->title),
-            'body' => $request->body,
-            'category_id' => $request->category_id,
-            'user_id' => $request->user_id,
-        ]);
+        // $question->update([
+        //     'title' => $request->title,
+        //     'slug' => str_slug($request->title),
+        //     'body' => $request->body,
+        //     'category_id' => $request->category_id,
+        //     'user_id' => $request->user_id,
+        // ]);
 
         return response('Update success', 201);
     }
