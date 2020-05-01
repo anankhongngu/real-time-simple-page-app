@@ -72,7 +72,7 @@
 					{
 						title: 'Category',
 						to: '/category',
-						show: User.loggedIn()
+						show: User.admin()
 					},
 
 					{

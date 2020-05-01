@@ -21,12 +21,12 @@
 	        ></v-card-text>
 
 			<v-card-actions v-if ="own">
-				<v-btn icon class ="white--text">
+				<v-btn icon class ="blue--text">
 					<v-icon @click ="edit">edit</v-icon>
 				</v-btn>
 
 
-				<v-btn icon class ="white--text" @click ="destroy()">
+				<v-btn icon class ="red--text" @click ="destroy()">
 					<v-icon>delete</v-icon>
 				</v-btn>
 				

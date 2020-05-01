@@ -12,4 +12,9 @@ class Category extends Model
     }
 
     protected $guarded = []; //tat ca duoc gan de su dung cho questioncotroller
+    //  protected $fillable = [
+    //     'name', 'slug'
+    // ]; 
+
+    // public $timestamps = FALSE;
 }
